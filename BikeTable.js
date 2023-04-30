@@ -21,7 +21,6 @@ const BikeTable = () => {
       <Text style={styles.cell}>{item.name}</Text>
       <Text style={styles.cell}>{item.wheel}</Text>
       <Text style={styles.cell}>{item.usage}</Text>
-      <Text style={styles.cell}>{item.price}</Text>
     </View>
   );
 
