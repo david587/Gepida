@@ -1,3 +1,12 @@
+// File: BikeTable.js
+// Author: Baráth Dávid
+// Copyright: 2023, Baráth Dávid
+// Group: Szoft 2 N
+// Date: 2023-04-30
+// Github: https://github.com/davis587/
+// Licenc: GNU GPL
+
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 
