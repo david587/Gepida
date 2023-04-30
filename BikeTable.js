@@ -3,11 +3,16 @@ import { View, Text, FlatList, StyleSheet } from 'react-native';
 
 const BikeTable = () => {
   const [bikes, setBikes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:8000/bikes')
       .then(response => response.json())
-      .then(data => setBikes(data.bikes))
+      .then(data => {
+        console.log(data);
+        setBikes(data);
+        setLoading(false);
+      })
       .catch(error => console.error(error));
   }, []);
 
@@ -19,6 +24,14 @@ const BikeTable = () => {
       <Text style={styles.cell}>{item.price}</Text>
     </View>
   );
+
+  if (loading) {
+    return (
+      <View style={styles.container}>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <FlatList
